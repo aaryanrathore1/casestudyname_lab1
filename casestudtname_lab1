@@ -1,0 +1,34 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn import metrics
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import LabelEncoder
+data=pd.read_csv('advertising.csv')
+data.isna().sum()
+data.head()
+data.tail()
+data.info()
+data.describe()
+column=['TV','radio','newspaper','sales','Unnamed']
+
+mean=data[column].mean()
+sns.pairplot(data)
+
+data['Unnamed']=data['Unnamed'].replace(np.nan,mean)  
+plt.figure(figsize=(10,8))
+sns.pairplot(data)
+data.columns
+data.corr()
+sns.heatmap(data.corr(),annot=True)
+columns=['sales']
+
+classifier=LogisticRegression()
+x=data.drop,axis=2
+y=data
+sales=max,('sales')
+
+    
+
